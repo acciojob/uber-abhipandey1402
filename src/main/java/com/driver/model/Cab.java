@@ -2,7 +2,6 @@ package com.driver.model;
 
 import javax.persistence.*;
 
-@Entity
 public class Cab {
 
     @Id
@@ -13,9 +12,6 @@ public class Cab {
 
     boolean available;
 
-    @OneToOne
-    @JoinColumn
-    private Driver driver;
 
     public Cab() {
     }
@@ -24,6 +20,9 @@ public class Cab {
         this.cabId = cabId;
         this.perKmRate = perKmRate;
         this.available = available;
+    }
+
+    public Cab(int i, boolean b) {
     }
 
     public int getCabId() {
@@ -42,11 +41,24 @@ public class Cab {
         this.perKmRate = perKmRate;
     }
 
-    public boolean isAvailable() {
+    public boolean getAvailable() {
         return available;
     }
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+
+    @OneToOne
+    @JoinColumn
+    private Driver driver;
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 }
