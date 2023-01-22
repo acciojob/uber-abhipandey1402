@@ -4,25 +4,19 @@ import javax.persistence.*;
 import java.util.List;
 
 public class Customer {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer customerId;
-
-    String mobile;
-
-    String password;
-
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<TripBooking> tripBookingList;
-
-    public Customer() {
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int customerId;
+    private String mobile;
+    private String password;
 
     public Customer(int customerId, String mobile, String password) {
         this.customerId = customerId;
         this.mobile = mobile;
         this.password = password;
+    }
+
+    public Customer() {
     }
 
     public int getCustomerId() {
@@ -57,5 +51,7 @@ public class Customer {
         this.tripBookingList = tripBookingList;
     }
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<TripBooking> tripBookingList;
 
 }

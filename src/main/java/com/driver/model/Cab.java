@@ -3,52 +3,44 @@ package com.driver.model;
 import javax.persistence.*;
 
 public class Cab {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer cabId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private int perKmRate;
 
-    int perKmRate;
-
-    boolean available;
-
-
-    public Cab() {
-    }
-
-    public Cab(int cabId, int perKmRate, boolean available) {
-        this.cabId = cabId;
+    public Cab(int perKmRate, boolean available) {
         this.perKmRate = perKmRate;
         this.available = available;
     }
 
-    public Cab(int i, boolean b) {
-    }
-
-    public int getCabId() {
-        return cabId;
-    }
-
-    public void setCabId(int cabId) {
-        this.cabId = cabId;
-    }
-
-    public int getPerKmRate() {
-        return perKmRate;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setPerKmRate(int perKmRate) {
         this.perKmRate = perKmRate;
     }
 
-    public boolean getAvailable() {
-        return available;
-    }
-
     public void setAvailable(boolean available) {
         this.available = available;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public int getPerKmRate() {
+        return perKmRate;
+    }
+
+    public boolean getAvailable() {
+        return available;
+    }
+
+    public Cab() {
+    }
+
+    private boolean available;
 
     @OneToOne
     @JoinColumn
