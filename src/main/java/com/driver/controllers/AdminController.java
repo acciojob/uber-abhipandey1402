@@ -17,7 +17,6 @@ public class AdminController {
 
 	@Autowired
 	AdminService adminService;
-
 	@PostMapping("/register")
 	public ResponseEntity<Void> registerAdmin(@RequestBody Admin admin){
 		adminService.adminRegister(admin);
@@ -26,7 +25,7 @@ public class AdminController {
 
 	@PutMapping("/update")
 	public ResponseEntity<Admin> updateAdminPassword(@RequestParam Integer adminId, @RequestParam String password){
-		Admin updatedAdmin = adminService.updatePassword(adminId, password);
+		Admin updatedAdmin= adminService.updatePassword(adminId,password);
 		return new ResponseEntity<>(updatedAdmin, HttpStatus.OK);
 	}
 
@@ -37,13 +36,11 @@ public class AdminController {
 
 	@GetMapping("/listOfCustomers")
 	public List<Customer> listOfCustomers() {
-		List<Customer> listOfCustomers = adminService.getListOfCustomers();
-		return listOfCustomers;
+		return adminService.getListOfCustomers();
 	}
 
 	@GetMapping("/listOfDrivers")
 	public List<Driver> listOfDrivers() {
-		List<Driver> listOfDrivers = adminService.getListOfDrivers();
-		return listOfDrivers;
+		return adminService.getListOfDrivers();
 	}
 }

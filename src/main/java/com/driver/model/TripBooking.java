@@ -6,7 +6,7 @@ public class TripBooking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int tripBookingId;
+    Integer tripBookingId;
 
     String fromLocation;
 

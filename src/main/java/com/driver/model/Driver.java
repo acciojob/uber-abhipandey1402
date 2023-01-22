@@ -8,7 +8,7 @@ public class Driver {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int driverId;
+    Integer driverId;
 
     String mobile;
 

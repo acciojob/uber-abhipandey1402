@@ -7,7 +7,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int customerId;
+    Integer customerId;
 
     String mobile;
 

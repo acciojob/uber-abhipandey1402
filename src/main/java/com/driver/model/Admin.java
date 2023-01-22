@@ -1,14 +1,15 @@
 package com.driver.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Admin")
 
 public class Admin{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int adminId;
+    private Integer adminId;
 
     private String username;
 

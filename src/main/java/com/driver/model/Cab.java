@@ -6,7 +6,7 @@ public class Cab {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int cabId;
+    Integer cabId;
 
     int perKmRate;
 
